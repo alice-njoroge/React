@@ -21,12 +21,12 @@
                 Age: 22
 
             }
-            handleClick(e) {
+            handleClick = (e) => {
                 console.log(e.target, e.pageX);
 
             }
-            handleCopy(e) {
-                console.log("you are plagiarising my work :(")
+            handleCopy = (e) => {
+                console.log("you are plagiarising my work :(", this.state.name, "does not like that")
             }
             render() {
                 return (
