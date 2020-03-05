@@ -31,6 +31,16 @@
             handleCopy = (e) => {
                 console.log("you are plagiarising my work :(", this.state.name, "does not like that")
             }
+            handleChange = (e) => {
+                this.setState({
+                    name: e.target.value
+                })
+            }
+            handleSubmit = (e) => {
+                e.preventDefault();
+                console.log("form submitted by : ", this.state.name);
+
+            }
             render() {
                 return (
                     <div className="app-content">
@@ -38,6 +48,11 @@
                         <p> My name is: {this.state.name} </p>
                         <button onClick={this.handleClick}> Click Me</button>
                         <p onCopy={this.handleCopy}>here is some original text</p>
+
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" onChange={this.handleChange} />
+                            <button>Submit </button>
+                        </form>
                     </div>
                 )
             }
