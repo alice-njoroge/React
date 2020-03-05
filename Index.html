@@ -21,11 +21,20 @@
                 Age: 22
 
             }
+            handleClick(e) {
+                console.log(e.target, e.pageX);
+
+            }
+            handleCopy(e) {
+                console.log("you are plagiarising my work :(")
+            }
             render() {
                 return (
                     <div className="app-content">
                         <h1> Hey You!!</h1>
                         <p> My name is: {this.state.name} </p>
+                        <button onClick={this.handleClick}> Click Me</button>
+                        <p onCopy={this.handleCopy}>here is some original text</p>
                     </div>
                 )
             }
