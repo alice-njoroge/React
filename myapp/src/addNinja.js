@@ -4,23 +4,22 @@ import React, {Component} from 'react';
 class AddNinja extends Component {
     state = {
         name: null,
-        age:null
+        age: null
     };
-     handleChange = (e)=>{
+    handleChange = (e) => {
         this.setState({
-            [e.target.id]:e.target.value
+            [e.target.id]: e.target.value
         });
-         console.log(this.state);
-
     };
-     handleSubmit = (e)=>{
-         e.preventDefault();
-     };
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addNinja(this.state);
+    };
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit} >
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Name:</label>
                         <input type="text" onChange={this.handleChange} className="form-control" id="name"
