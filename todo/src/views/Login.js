@@ -23,7 +23,8 @@ class Login extends Component {
         });
         axios.post(`http://127.0.0.1:3031/users/login`, this.state.form)
             .then(res => {
-                console.log(res);
+                localStorage.setItem("token", res.data.token);
+                return this.props.history.push("/users");
             })
             .catch(e => {
                 this.setState({
